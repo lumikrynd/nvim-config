@@ -23,3 +23,6 @@ vim.opt.incsearch = true
 
 -- prevents cursor hitting bottom or top edge
 vim.opt.scrolloff = 8
+
+-- command mode auto completion behaviour
+vim.opt.wildmode = 'longest:full,full'
