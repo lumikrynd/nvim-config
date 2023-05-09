@@ -1,8 +1,5 @@
 -- remember. "so" to run file
 
--- For cloning
--- git clone https://github.com/wbthomason/packer.nvim "$env:XDG_DATA_HOME\nvim-data\site\pack\packer\opt\packer.nvim"
-
 -- You must run this or `PackerSync` whenever you make changes to your plugin configuration
 -- Regenerate compiled loader file
 -- :PackerCompile
