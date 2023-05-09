@@ -13,3 +13,6 @@ Run `:so` in file `lua/plugins/init.lua` followed by `:PackerSync`
 
 ### GREP for Telescope
 See `https://github.com/BurntSushi/ripgrep#installation`
+
+### compiler for treesitter
+´choco install mingw´
