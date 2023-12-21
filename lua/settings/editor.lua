@@ -4,6 +4,10 @@ vim.opt.lbr = true
 vim.opt.breakindent = true
 vim.opt.showbreak = ' @> '
 
+-- whitespace characters
+vim.opt.list = true
+vim.opt.listchars = 'tab:-->,lead:.,trail:_,multispace:...+,leadmultispace:...+,nbsp:%'
+
 -- line number
 vim.opt.nu = true
 vim.opt.rnu = true
@@ -12,7 +16,7 @@ vim.opt.rnu = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 
 -- smartindent
 vim.opt.smartindent = true
@@ -29,3 +33,5 @@ vim.opt.wildmode = 'longest:full,full'
 
 -- because backup files in same directory royally sucks
 vim.opt.backupdir = '$XDG_STATE_HOME/nvim/backup//, $TMPDIR/nvim/backup//, $TMP/nvim/backup//, $TEMP/nvim/backup//, .'
+
+vim.opt.shada = ''
