@@ -30,8 +30,3 @@ vim.opt.scrolloff = 8
 
 -- command mode auto completion behaviour
 vim.opt.wildmode = 'longest:full,full'
-
--- because backup files in same directory royally sucks
-vim.opt.backupdir = '$XDG_STATE_HOME/nvim/backup//, $TMPDIR/nvim/backup//, $TMP/nvim/backup//, $TEMP/nvim/backup//, .'
-
-vim.opt.shada = ''
