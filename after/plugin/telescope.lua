@@ -15,11 +15,17 @@ end
 local function better_live_grep()
   builtin.live_grep {
     glob_pattern = {
-      --"!**/.git/*",
-      "!**/.git/logs/**",
-      "!**/.git/objects/**",
-      "!**/.git/refs/**",
-      --"!**.lua"
+      "!**/.git/COMMIT_EDITMSG",
+      "!**/.git/FETCH_HEAD",
+      "!**/.git/HEAD",
+      "!**/.git/ORIG_HEAD",
+      "!**/.git/gitk.cache",
+      "!**/.git/index",
+      "!**/.git/packed-refs",
+      "!**/.git/info",
+      "!**/.git/logs",
+      "!**/.git/objects",
+      "!**/.git/refs",
       --see https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#configuration-file
     },
     additional_args = {
