@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-treesitter/nvim-treesitter',
-    {run = ':TSUpdate'}
+    tag = 'v0.9.2'--,
+    --{run = ':TSUpdate'}
   }
 end)
