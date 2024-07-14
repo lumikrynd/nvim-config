@@ -1,4 +1,10 @@
-local builtin = require('telescope.builtin')
+local tstatus,telescope = pcall(require, 'telescope')
+local bstatus,builtin = pcall(require, 'telescope.builtin')
+
+if not (tstatus and bstatus) then
+  print("telescope configuration skipped")
+  return
+end
 
 local fileSettings = {
   --hidden = true,
@@ -40,7 +46,7 @@ vim.keymap.set('n', '<leader>fr', better_live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>ft', builtin.help_tags, {})
 
-require('telescope').setup{
+telescope.setup{
   defaults = {
     file_ignore_patterns = {
       --"%.git",
