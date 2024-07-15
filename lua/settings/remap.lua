@@ -1,5 +1,6 @@
 -- The apparantly important leader key
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 -- visual mode move text block
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
