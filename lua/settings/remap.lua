@@ -18,6 +18,12 @@ vim.keymap.set("n", ";", ",")
 vim.keymap.set("x", "<leader>d", "\"_d")
 vim.keymap.set("", "<leader>p", "\"_dP")
 
+-- Easier goto mark
+vim.keymap.set("n", "´", "`")
+vim.keymap.set("n", "´´", "``")
 
 -- since ctrl-] seems to be impossible in some guis...
 vim.keymap.set("n", "<leader>g", "<c-]>")
+
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+
