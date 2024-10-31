@@ -25,6 +25,10 @@ vim.opt.smartindent = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
+-- Case insensitive search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 -- prevents cursor hitting bottom or top edge
 vim.opt.scrolloff = 8
 
