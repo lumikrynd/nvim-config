@@ -1,3 +1,3 @@
-require("settings.remap")
+require("settings.keymap")
 require("settings.editor")
 require("settings.environment")
