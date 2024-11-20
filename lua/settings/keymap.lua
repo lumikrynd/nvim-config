@@ -18,6 +18,11 @@ vim.keymap.set("n", ";", ",")
 vim.keymap.set("x", "<leader>d", "\"_d")
 vim.keymap.set("", "<leader>p", "\"_dP")
 
+-- some yank preferences
+vim.keymap.set("n", "Y", "y$")
+vim.keymap.set({"n", "v"}, "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+Y', { remap = true })
+
 -- Easier goto mark
 vim.keymap.set("n", "´", "`")
 vim.keymap.set("n", "´´", "``")
