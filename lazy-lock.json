@@ -4,4 +4,5 @@
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
   "telescope.nvim": { "branch": "master", "commit": "415af52339215926d705cccc08145f3782c4d132" },
   "tokyonight.nvim": { "branch": "main", "commit": "7bb270adaa7692c2c33befc35f5567fc596a2504" }
+  "vim-tmux-navigator": { "branch": "master", "commit": "791dacfcfc8ccb7f6eb1c853050883b03e5a22fe" }
 }

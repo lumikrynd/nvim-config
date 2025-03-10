@@ -33,3 +33,8 @@ vim.keymap.set("n", "<c-¨>", "<c-]>")
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- tmux integration
+vim.keymap.set({"", "t"}, "<A-h>", "<Plug>tmux-left")
+vim.keymap.set({"", "t"}, "<A-j>", "<Plug>tmux-down")
+vim.keymap.set({"", "t"}, "<A-k>", "<Plug>tmux-up")
+vim.keymap.set({"", "t"}, "<A-l>", "<Plug>tmux-right")
