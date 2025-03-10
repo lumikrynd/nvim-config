@@ -29,6 +29,7 @@ vim.keymap.set("n", "´´", "``")
 
 -- since ctrl-] seems to be impossible in some guis...
 vim.keymap.set("n", "<leader>g", "<c-]>")
+vim.keymap.set("n", "<c-¨>", "<c-]>")
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
