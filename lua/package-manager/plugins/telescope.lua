@@ -1,6 +1,7 @@
+local telescope, builtin
+
 local function better_live_grep() end
 
-local bstatus, builtin
 local function set_better_live_grep()
   function better_live_grep()
     builtin.live_grep {
@@ -37,29 +38,34 @@ local function Unhide(func)
   return inner
 end
 
+local opts = {
+  defaults = {
+    file_ignore_patterns = {
+      --"%.git",
+      --"%.git\\objects\\",
+      --"%.git\\refs\\",
+      --"%.git\\logs\\",
+      --"%.git\\[%w_]*",
+    },
+  },
+}
+
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim"
   },
-  opts = {
-    defaults = {
-      file_ignore_patterns = {
-        --"%.git",
-        --"%.git\\objects\\",
-        --"%.git\\refs\\",
-        --"%.git\\logs\\",
-        --"%.git\\[%w_]*",
-      },
-    },
-  },
-  init = function()
+  config = function()
+    local tstatus,bstatus
+    tstatus,telescope = pcall(require, 'telescope')
     bstatus,builtin = pcall(require, 'telescope.builtin')
 
-    if not (bstatus) then
+    if not (tstatus and bstatus) then
       print("telescope configuration skipped")
       return
     end
+
+    telescope.setup(opts)
 
     set_better_live_grep()
 
