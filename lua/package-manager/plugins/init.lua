@@ -1,7 +1,7 @@
 return {
-  require( ... .. ".telescope"),
-  require( ... .. ".treesitter"),
-  require( ... .. ".colorscheme"),
-  require( ... .. ".oil"),
-  require( ... .. ".tmux-navigator"),
+  { import = ... .. ".telescope" },
+  { import = ... .. ".treesitter"},
+  { import = ... .. ".colorscheme"},
+  { import = ... .. ".oil"},
+  { import = ... .. ".tmux-navigator"},
 }
