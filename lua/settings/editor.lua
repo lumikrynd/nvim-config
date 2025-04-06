@@ -34,3 +34,5 @@ vim.opt.scrolloff = 8
 
 -- command mode auto completion behaviour
 vim.opt.wildmode = 'longest:full,full'
+
+vim.o.winborder = 'rounded'

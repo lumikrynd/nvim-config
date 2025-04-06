@@ -4,3 +4,4 @@ print("Any Warnings?")
 
 require("settings")
 require("package-manager")
+require("lsp-setup")
