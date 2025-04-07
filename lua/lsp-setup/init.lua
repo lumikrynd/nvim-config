@@ -1,4 +1,5 @@
 require(... .. '.luals')
+require(... .. '.csharp-ls')
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
