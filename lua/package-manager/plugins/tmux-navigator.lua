@@ -16,4 +16,7 @@ return {
     { "<Plug>tmux-previous", "<cmd>TmuxNavigatePrevious<cr>", mode = {"", "t"} },
     { "<Plug>tmux-ps-list", "<cmd>TmuxNavigatorProcessList<cr>", mode = {"", "t"} },
   },
+  init = function()
+    vim.g.tmux_navigator_no_mappings = 1
+  end,
 }
