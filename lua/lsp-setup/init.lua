@@ -17,3 +17,7 @@ vim.cmd[[set completeopt+=menuone,noselect]]
 vim.diagnostic.config({
   virtual_lines = true
 })
+
+
+vim.lsp.enable('lua_ls')
+--vim.lsp.enable('lua_ls_old')
