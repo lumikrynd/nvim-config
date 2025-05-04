@@ -57,6 +57,26 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<F4>', vim.lsp.buf.code_action, opts)
     vim.keymap.set("i", "<C-Space>", vim.lsp.completion.get, opts)
     vim.keymap.set("i", "<C-.>", vim.lsp.completion.get, opts)
+    --[[
+    Look into the following functions
+    vim.lsp.buf.workspace_symbol() search for class and so on... see if it could be made to work with telescope
+    vim.lsp.buf.typehierarchy() see inheritance
+    vim.lsp.buf.signature_help -- what is the difference on this and buf.hover?
+    vim.lsp.buf.type_definition() -- sometimes usefull to just go to the type
+    vim.lsp.buf.outgoing_calls()
+    vim.lsp.buf.incoming_calls()
+    vim.lsp.buf.document_symbol -- kinda usefull I guess
+
+    also figure out if I want these default binds:
+
+    Some keymaps are created unconditionally when Nvim starts:
+    - "grn" is mapped in Normal mode to |vim.lsp.buf.rename()|
+    - "gra" is mapped in Normal and Visual mode to |vim.lsp.buf.code_action()|
+    - "grr" is mapped in Normal mode to |vim.lsp.buf.references()|
+    - "gri" is mapped in Normal mode to |vim.lsp.buf.implementation()|
+    - "gO" is mapped in Normal mode to |vim.lsp.buf.document_symbol()|
+    - CTRL-S is mapped in Insert mode to |vim.lsp.buf.signature_help()|
+    --]]
   end,
 })
 
