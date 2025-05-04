@@ -8,13 +8,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
     if client == nil then return end
 
     -- Enable auto-completion. Note: Use CTRL-Y to select an item. |complete_CTRL-Y|
+    --[[
     if client:supports_method('textDocument/completion') then
       vim.lsp.completion.enable(true, client.id, args.buf, {autotrigger = true})
     end
+    ]]--
   end,
 })
 
-vim.cmd[[set completeopt+=menuone,noselect]]
+--vim.cmd[[set completeopt+=menuone,noselect]]
 
 vim.diagnostic.config({
   virtual_text = false,
