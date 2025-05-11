@@ -1,10 +1,10 @@
--- linebreak
+-- line break
 vim.opt.wrap = true
 vim.opt.lbr = true
 vim.opt.breakindent = true
 vim.opt.showbreak = ' @> '
 
--- whitespace characters
+-- white space characters
 vim.opt.list = true
 vim.opt.listchars = 'tab:-->,lead:.,trail:_,multispace:...+,leadmultispace:...+,nbsp:%'
 
@@ -18,10 +18,10 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 
--- smartindent
+-- smart-indent
 vim.opt.smartindent = true
 
--- modified search heighlight
+-- modified search highlight
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
@@ -36,3 +36,8 @@ vim.opt.scrolloff = 8
 vim.opt.wildmode = 'longest:full,full'
 
 vim.o.winborder = 'rounded'
+
+-- Spelling
+vim.o.spell = true
+vim.o.spelllang = 'en'
+vim.o.spelloptions = 'camel'
