@@ -32,6 +32,7 @@ return {
       ['<C-e>'] = { 'hide' },
       ['<C-y>'] = { 'select_and_accept' },
       ['<Enter>'] = { 'accept', 'fallback' },
+      --['<Escape>'] = { 'hide', 'fallback' }, -- need more testing, seems a bit annoying
 
       ['<C-k>'] = { 'select_prev','show_signature', 'hide_signature' , 'fallback' },
       ['<C-j>'] = { 'select_next', 'fallback' },
@@ -56,19 +57,20 @@ return {
     {
       documentation = { auto_show = false },
       list = {
-        selection = { preselect = false, auto_insert = false },
+        selection = { preselect = true, auto_insert = false },
       }
     },
 
     cmdline = {
       keymap = {
-        preset = 'cmdline',
+        preset = 'inherit',
+        ['<Tab>'] = { 'show', 'select_next', 'snippet_forward', 'fallback' },
       },
 
       completion = {
         --documentation = { auto_show = false },
         list = {
-          selection = { preselect = false, auto_insert = false },
+          selection = { preselect = true, auto_insert = false },
         },
       },
     },
