@@ -11,7 +11,10 @@ return {
       -- See https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua for original colors
       colors.border = "#333333"
       colors.bg_statusline = "#333333"
-    end
+    end,
+    on_highlights = function(hl, c)
+      hl.Whitespace.fg = 'Purple'
+    end,
   },
   init = function()
     vim.cmd([[colorscheme tokyonight-night]])
