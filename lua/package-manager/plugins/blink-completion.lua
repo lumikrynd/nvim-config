@@ -29,19 +29,17 @@ return {
       preset = 'none',
 
       ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
-      ['<C-e>'] = { 'hide' },
-      ['<C-y>'] = { 'select_and_accept' },
-      ['<Enter>'] = { 'accept', 'fallback' },
+      ['<C-e>'] = { 'hide', 'fallback' },
+      ['<C-y>'] = { 'select_and_accept', 'show', 'fallback' },
+      ['<Tab>'] = { 'accept', 'fallback' },
+      ['<S-Tab>'] = { 'show', 'fallback' },
       --['<Escape>'] = { 'hide', 'fallback' }, -- need more testing, seems a bit annoying
 
-      ['<C-k>'] = { 'select_prev','show_signature', 'hide_signature' , 'fallback' },
-      ['<C-j>'] = { 'select_next', 'fallback' },
+      ['<C-k>'] = { 'select_prev', 'snippet_forward', 'show_signature', 'hide_signature' , 'fallback' },
+      ['<C-j>'] = { 'select_next', 'snippet_backward', 'fallback' },
 
       ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
       ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
-
-      ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' }, --will probably end up setting this to select_and_accept
-      ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
 
       ['<C-h>'] = { 'show_signature', 'hide_signature', 'fallback' },
     },
@@ -64,7 +62,7 @@ return {
     cmdline = {
       keymap = {
         preset = 'inherit',
-        ['<Tab>'] = { 'show', 'select_next', 'snippet_forward', 'fallback' },
+        ['<Tab>'] = { 'show', 'accept', 'fallback' },
       },
 
       completion = {
