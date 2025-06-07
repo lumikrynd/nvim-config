@@ -13,7 +13,9 @@ return {
       colors.bg_statusline = "#333333"
     end,
     on_highlights = function(hl, c)
-      hl.Whitespace.fg = 'Purple'
+      hl.Whitespace.fg = "Purple"
+      hl.StatusLine.bg = "#444444"
+      hl.StatusLineNC.fg = "#505a84"
     end,
   },
   init = function()
