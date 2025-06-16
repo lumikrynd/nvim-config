@@ -13,6 +13,8 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", ",", ";")
 vim.keymap.set("n", ";", ",")
+vim.keymap.set("n", "<C-S-h>", "gT")
+vim.keymap.set("n", "<C-S-l>", "gt")
 
 -- keep the default register after paste
 vim.keymap.set("x", "<leader>d", "\"_d")
