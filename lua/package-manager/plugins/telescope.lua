@@ -69,11 +69,11 @@ return {
 
     set_better_live_grep()
 
-    vim.keymap.set('n', '<leader>ff', Unhide(builtin.find_files), {})
-    vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
-    vim.keymap.set('n', '<leader>fr', better_live_grep, {})
-    vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-    vim.keymap.set('n', '<leader>ft', builtin.help_tags, {})
+    vim.keymap.set("n", "<Plug>telescope-find_files", Unhide(builtin.find_files), {})
+    vim.keymap.set("n", "<Plug>telescope-git_files", builtin.git_files, {})
+    vim.keymap.set("n", "<Plug>telescope-live_grep", better_live_grep, {})
+    vim.keymap.set("n", "<Plug>telescope-buffers", builtin.buffers, {})
+    vim.keymap.set("n", "<Plug>telescope-help_tags", builtin.help_tags, {})
 
     --{hidden=true, layout_config={prompt_position="top"}}
     --builtin.man_pages

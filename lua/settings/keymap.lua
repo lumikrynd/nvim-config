@@ -41,6 +41,13 @@ vim.keymap.set({"", "t"}, "<A-j>", "<Plug>tmux-down")
 vim.keymap.set({"", "t"}, "<A-k>", "<Plug>tmux-up")
 vim.keymap.set({"", "t"}, "<A-l>", "<Plug>tmux-right")
 
+-- telescope
+vim.keymap.set("n", "<leader>ff", "<Plug>telescope-find_files")
+vim.keymap.set("n", "<leader>fg", "<Plug>telescope-git_files")
+vim.keymap.set("n", "<leader>fr", "<Plug>telescope-live_grep")
+vim.keymap.set("n", "<leader>fb", "<Plug>telescope-buffers")
+vim.keymap.set("n", "<leader>ft", "<Plug>telescope-help_tags")
+
 -- lsp fun
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
@@ -59,6 +66,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<F4>', vim.lsp.buf.code_action, opts)
     vim.keymap.set("i", "<C-Space>", vim.lsp.completion.get, opts)
     vim.keymap.set("i", "<C-.>", vim.lsp.completion.get, opts)
+
     --[[
     Look into the following functions
     vim.lsp.buf.workspace_symbol() search for class and so on... see if it could be made to work with telescope
