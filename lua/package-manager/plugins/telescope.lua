@@ -25,6 +25,7 @@ local function get_better_live_grep()
   end
 end
 
+--todo either make this work or remove it...
 local fileSettings = {
   --hidden = true,
 }
@@ -46,6 +47,12 @@ local opts = {
       --"%.git\\logs\\",
       --"%.git\\[%w_]*",
     },
+    mappings = {
+      n = {
+        -- ["<esc>"] = require('telescope.actions').close,
+        -- TODO, rebind alt-q to ctrl-q (quickfix add)
+      }
+    }
   },
 }
 
@@ -57,6 +64,7 @@ return {
   config = function()
     local telescope = require("telescope")
     local builtin = require("telescope.builtin")
+    local actions = require("telescope.actions")
 
     telescope.setup(opts)
 
