@@ -16,6 +16,10 @@ vim.keymap.set("n", ";", ",")
 vim.keymap.set("n", "<C-S-h>", "gT")
 vim.keymap.set("n", "<C-S-l>", "gt")
 
+vim.keymap.set("n", "*", "<Plug>custom-search-normal")
+vim.keymap.set("v", "*", "<Plug>custom-search-visual")
+vim.keymap.set({"n", "v"}, "#", "")
+
 -- keep the default register after paste
 vim.keymap.set("x", "<leader>d", "\"_d")
 vim.keymap.set("", "<leader>p", "\"_dP")
