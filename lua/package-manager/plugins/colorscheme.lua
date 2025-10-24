@@ -16,6 +16,8 @@ return {
       hl.Whitespace.fg = "Purple"
       hl.StatusLine.bg = "#444444"
       hl.StatusLineNC.fg = "#505a84"
+      hl.DiagnosticUnnecessary.fg = "#d37baa"
+      hl.SpellBad.sp = "#f026f3"
     end,
   },
   init = function()
