@@ -57,13 +57,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
     local opts = {buffer = event.buf}
+    local diagnostic_opts = {
+      focusable = true,
+      scope = 'cursor',
+      close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter' },
+    }
 
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'L', function() vim.diagnostic.open_float(nil, diagnostic_opts) end, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, opts)
     vim.keymap.set({'n', 'x'}, '<F3>', function() vim.lsp.buf.format{async = true} end, opts)
@@ -73,10 +78,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     local error = vim.diagnostic.severity.ERROR
     local warning = vim.diagnostic.severity.WARN
-    vim.keymap.set("n", "]g", function () vim.diagnostic.jump{count=1, float=true, severity=warning} end)
-    vim.keymap.set("n", "[g", function () vim.diagnostic.jump{count=-1, float=true, severity=warning} end)
-    vim.keymap.set("n", "]e", function () vim.diagnostic.jump{count=1, float=true, severity=error} end)
-    vim.keymap.set("n", "[e", function () vim.diagnostic.jump{count=-1, float=true, severity=error} end)
+    vim.keymap.set("n", "]g", function() vim.diagnostic.jump{count=1, float=true, severity=warning} end)
+    vim.keymap.set("n", "[g", function() vim.diagnostic.jump{count=-1, float=true, severity=warning} end)
+    vim.keymap.set("n", "]e", function() vim.diagnostic.jump{count=1, float=true, severity=error} end)
+    vim.keymap.set("n", "[e", function() vim.diagnostic.jump{count=-1, float=true, severity=error} end)
 
     --[[
     Look into the following functions

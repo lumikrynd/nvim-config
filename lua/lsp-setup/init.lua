@@ -22,7 +22,22 @@ vim.diagnostic.config({
   virtual_text = false,
   underline = true,
   signs = true,
-  virtual_lines = { current_line = true },
+  virtual_lines = false,
+  float = {
+    border = {
+        {"╔", "FloatBorder"},
+        {"═", "FloatBorder"},
+        {"╗", "FloatBorder"},
+        {"║", "FloatBorder"},
+        {"╝", "FloatBorder"},
+        {"═", "FloatBorder"},
+        {"╚", "FloatBorder"},
+        {"║", "FloatBorder"}
+    },
+    source = "always",
+    update_in_insert = true,
+    severity_sort = true,
+  },
 })
 
 
