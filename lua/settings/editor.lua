@@ -36,15 +36,15 @@ vim.opt.scrolloff = 8
 vim.opt.wildmode = 'longest:full,full'
 
 -- visual
-vim.o.winborder = 'rounded'
+vim.opt.winborder = 'rounded'
 vim.opt.showtabline = 2
 vim.opt.tabline = ''
 vim.opt.statusline = ''
 
 -- Spelling
-vim.o.spell = true
-vim.o.spelllang = 'en'
-vim.o.spelloptions = 'camel'
+vim.opt.spell = true
+vim.opt.spelllang = 'en'
+vim.opt.spelloptions = 'camel'
 
 -- Diverse
 vim.opt.nrformats='bin,hex,octal,blank,alpha'
