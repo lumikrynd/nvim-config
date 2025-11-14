@@ -19,10 +19,20 @@ vim.api.nvim_create_autocmd('LspAttach', {
 --vim.cmd[[set completeopt+=menuone,noselect]]
 
 vim.diagnostic.config({
+  severity_sort = true,
   virtual_text = false,
   underline = true,
-  signs = true,
-  virtual_lines = false,
+  signs = {
+    numhl = {
+      [vim.diagnostic.severity.WARN] = 'WarningMsg',
+      [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+    },
+    linehl = {},
+  },
+  virtual_lines = {
+    current_line = true,
+    severity = vim.diagnostic.severity.ERROR,
+  },
   float = {
     border = {
         {"╔", "FloatBorder"},
