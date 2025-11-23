@@ -14,8 +14,8 @@ vim.opt.rnu = true
 
 -- tabs
 vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 0
+vim.opt.shiftwidth = 0
 vim.opt.expandtab = false
 
 -- smart-indent
@@ -49,3 +49,5 @@ vim.opt.spelloptions = 'camel'
 -- Diverse
 vim.opt.nrformats='bin,hex,octal,blank,alpha'
 vim.g.python_recommended_style = 0
+vim.opt.formatoptions:remove {'o'}
+vim.opt.verbose = 1
