@@ -37,17 +37,26 @@ local function Unhide(func)
   return inner
 end
 
-local opts = {
-  defaults = {
-    file_ignore_patterns = {
-      --"%.git",
-      --"%.git\\objects\\",
-      --"%.git\\refs\\",
-      --"%.git\\logs\\",
-      --"%.git\\[%w_]*",
+local function get_opts()
+  local actions = require('telescope.actions')
+  return {
+    defaults = {
+      mappings = {
+        n = {
+          ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+          ["<A-q>"] = false,
+        },
+      },
+      file_ignore_patterns = {
+        --"%.git",
+        --"%.git\\objects\\",
+        --"%.git\\refs\\",
+        --"%.git\\logs\\",
+        --"%.git\\[%w_]*",
+      },
     },
-  },
-}
+  }
+end
 
 return {
   "nvim-telescope/telescope.nvim",
@@ -58,7 +67,7 @@ return {
     local telescope = require("telescope")
     local builtin = require("telescope.builtin")
 
-    telescope.setup(opts)
+    telescope.setup(get_opts())
 
     local livegrep = get_better_live_grep()
 
