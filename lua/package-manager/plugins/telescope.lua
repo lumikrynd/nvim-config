@@ -43,8 +43,21 @@ local function get_opts()
     defaults = {
       mappings = {
         n = {
+          ["<M-q>"] = false,
+          ["<M-f>"] = false,
+          ["<M-k>"] = false,
+          ["<c-d>"] = false,
+          ["<c-f>"] = false,
+          ["<c-u>"] = false,
+          ["<c-x>"] = false,
+          ["L"] = false,
+          ["H"] = false,
           ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-          ["<A-q>"] = false,
+          ["<C-k>"] = actions.preview_scrolling_up,
+          ["<C-j>"] = actions.preview_scrolling_down,
+          ["<C-h>"] = actions.preview_scrolling_left,
+          ["<C-l>"] = actions.preview_scrolling_right,
+          ["<C-b>"] = actions.select_horizontal,
         },
       },
       file_ignore_patterns = {
@@ -53,6 +66,16 @@ local function get_opts()
         --"%.git\\refs\\",
         --"%.git\\logs\\",
         --"%.git\\[%w_]*",
+      },
+    },
+    pickers = {
+      buffers = {
+        mappings = {
+          n = {
+            ["<M-d>"] = false,
+            ["<C-d>"] = actions.delete_buffer,
+          },
+        },
       },
     },
   }
