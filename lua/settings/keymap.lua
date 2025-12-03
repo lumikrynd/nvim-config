@@ -52,6 +52,10 @@ vim.keymap.set("n", "<leader>fr", "<Plug>telescope-live_grep")
 vim.keymap.set("n", "<leader>fb", "<Plug>telescope-buffers")
 vim.keymap.set("n", "<leader>ft", "<Plug>telescope-help_tags")
 
+-- Splits
+vim.keymap.set("n", "<C-w>%", "<C-w>v")
+vim.keymap.set("n", "<C-w>\"", "<C-w>s")
+
 -- lsp fun
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
