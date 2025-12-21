@@ -8,6 +8,7 @@ return {
       "vimdoc",
       "c_sharp",
       "sql",
+      "rust",
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)

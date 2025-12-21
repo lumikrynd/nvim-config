@@ -25,6 +25,17 @@ vim.opt.smartindent = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
+-- fold
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldtext = ""
+vim.opt.foldmethod = "expr"
+--vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 1
+vim.opt.foldnestmax = 3
+vim.opt.foldcolumn = "auto:1"
+vim.opt.foldminlines = 3
+vim.opt.foldopen = "hor,mark,percent,quickfix,search,tag,undo"
+
 -- Case insensitive search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
