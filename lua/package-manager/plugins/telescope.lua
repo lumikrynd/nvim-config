@@ -100,6 +100,16 @@ return {
     vim.keymap.set("n", "<Plug>telescope-buffers", builtin.buffers, {})
     vim.keymap.set("n", "<Plug>telescope-help_tags", builtin.help_tags, {})
 
+    vim.keymap.set("n", "<Plug>telescope-lsp_definition", builtin.lsp_definitions, {})
+    vim.keymap.set("n", "<Plug>telescope-lsp_references", builtin.lsp_references, {})
+    vim.keymap.set("n", "<Plug>telescope-lsp_type_def", builtin.lsp_type_definitions, {})
+    vim.keymap.set("n", "<Plug>telescope-lsp_implementations", builtin.lsp_implementations, {})
+    vim.keymap.set("n", "<Plug>telescope-lsp_incoming", builtin.lsp_incoming_calls, {})
+    vim.keymap.set("n", "<Plug>telescope-lsp_outgoing", builtin.lsp_outgoing_calls, {})
+    vim.keymap.set("n", "<Plug>telescope-lsp_definitions", builtin.lsp_definitions, {})
+    vim.keymap.set("n", "<Plug>telescope-lsp_symbols", builtin.lsp_document_symbols, {})
+    vim.keymap.set("n", "<Plug>telescope-lsp_ws_symbols", builtin.lsp_workspace_symbols, {})
+
     --{hidden=true, layout_config={prompt_position="top"}}
     --builtin.man_pages
   end,

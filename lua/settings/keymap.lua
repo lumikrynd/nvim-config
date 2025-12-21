@@ -70,15 +70,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'L', function() vim.diagnostic.open_float(nil, diagnostic_opts) end, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', 'gD', '<Plug>telescope-lsp_definition')
+    --vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
+    -- vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', 'go', '<Plug>telescope-lsp_type_def')
     vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, opts)
     vim.keymap.set({'n', 'x'}, '<F3>', function() vim.lsp.buf.format{async = true} end, opts)
     vim.keymap.set('n', '<F4>', vim.lsp.buf.code_action, opts)
     vim.keymap.set("i", "<C-Space>", vim.lsp.completion.get, opts)
     vim.keymap.set("i", "<C-.>", vim.lsp.completion.get, opts)
+
+    -- Override with telescope version
+    vim.keymap.set('n', 'gO', '<Plug>telescope-lsp_symbols')
+    vim.keymap.set('n', 'grT', '<Plug>telescope-lsp_type_def')
+    vim.keymap.set('n', 'grr', '<Plug>telescope-lsp_references')
+    vim.keymap.set('n', 'gri', '<Plug>telescope-lsp_implementations')
 
     local error = vim.diagnostic.severity.ERROR
     local warning = vim.diagnostic.severity.WARN
