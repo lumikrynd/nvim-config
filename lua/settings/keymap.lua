@@ -11,8 +11,8 @@ vim.keymap.set("n", "<C-j>", "<C-d>zz")
 vim.keymap.set("n", "<C-k>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", ",", ";")
-vim.keymap.set("n", ";", ",")
+-- vim.keymap.set("n", ",", ";")
+-- vim.keymap.set("n", ";", ",")
 vim.keymap.set("n", "<C-S-h>", "gT")
 vim.keymap.set("n", "<C-S-l>", "gt")
 
@@ -45,6 +45,10 @@ vim.keymap.set({"", "t"}, "<A-j>", "<Plug>tmux-down")
 vim.keymap.set({"", "t"}, "<A-k>", "<Plug>tmux-up")
 vim.keymap.set({"", "t"}, "<A-l>", "<Plug>tmux-right")
 
+-- Splits
+vim.keymap.set("n", "<C-w>%", "<C-w>v")
+vim.keymap.set("n", "<C-w>\"", "<C-w>s")
+
 -- telescope
 vim.keymap.set("n", "<leader>ff", "<Plug>telescope-find_files")
 vim.keymap.set("n", "<leader>fg", "<Plug>telescope-git_files")
@@ -52,9 +56,9 @@ vim.keymap.set("n", "<leader>fr", "<Plug>telescope-live_grep")
 vim.keymap.set("n", "<leader>fb", "<Plug>telescope-buffers")
 vim.keymap.set("n", "<leader>ft", "<Plug>telescope-help_tags")
 
--- Splits
-vim.keymap.set("n", "<C-w>%", "<C-w>v")
-vim.keymap.set("n", "<C-w>\"", "<C-w>s")
+-- Flash/quick jump
+vim.keymap.set("", "<leader>s", "<Plug>flash")
+vim.keymap.set("o", "<leader>S", "<Plug>flash-remote")
 
 -- lsp fun
 vim.api.nvim_create_autocmd('LspAttach', {
