@@ -2,6 +2,6 @@
 --Fix by always printing this ¯\_(ツ)_/¯
 print("Any Warnings?")
 
-require("settings")
 require("package-manager")
+require("settings")
 require("lsp-setup")

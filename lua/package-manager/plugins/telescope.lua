@@ -1,3 +1,8 @@
+vim.pack.add({
+  "https://github.com/nvim-lua/plenary.nvim",
+  "https://github.com/nvim-telescope/telescope.nvim",
+})
+
 local function get_better_live_grep()
   -- Can't for the love of god figure out how to pass in builtin's type if given as an argument
   -- Just fetch it here instead for better autocomplete
@@ -81,36 +86,25 @@ local function get_opts()
   }
 end
 
-return {
-  "nvim-telescope/telescope.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim"
-  },
-  config = function()
-    local telescope = require("telescope")
-    local builtin = require("telescope.builtin")
+local telescope = require("telescope")
+local builtin = require("telescope.builtin")
 
-    telescope.setup(get_opts())
+telescope.setup(get_opts())
 
-    local livegrep = get_better_live_grep()
+local livegrep = get_better_live_grep()
 
-    vim.keymap.set("n", "<Plug>telescope-find_files", Unhide(builtin.find_files), {})
-    vim.keymap.set("n", "<Plug>telescope-git_files", builtin.git_files, {})
-    vim.keymap.set("n", "<Plug>telescope-live_grep", livegrep, {})
-    vim.keymap.set("n", "<Plug>telescope-buffers", builtin.buffers, {})
-    vim.keymap.set("n", "<Plug>telescope-help_tags", builtin.help_tags, {})
+vim.keymap.set("n", "<Plug>telescope-find_files", Unhide(builtin.find_files), {})
+vim.keymap.set("n", "<Plug>telescope-git_files", builtin.git_files, {})
+vim.keymap.set("n", "<Plug>telescope-live_grep", livegrep, {})
+vim.keymap.set("n", "<Plug>telescope-buffers", builtin.buffers, {})
+vim.keymap.set("n", "<Plug>telescope-help_tags", builtin.help_tags, {})
 
-    vim.keymap.set("n", "<Plug>telescope-lsp_definition", builtin.lsp_definitions, {})
-    vim.keymap.set("n", "<Plug>telescope-lsp_references", builtin.lsp_references, {})
-    vim.keymap.set("n", "<Plug>telescope-lsp_type_def", builtin.lsp_type_definitions, {})
-    vim.keymap.set("n", "<Plug>telescope-lsp_implementations", builtin.lsp_implementations, {})
-    vim.keymap.set("n", "<Plug>telescope-lsp_incoming", builtin.lsp_incoming_calls, {})
-    vim.keymap.set("n", "<Plug>telescope-lsp_outgoing", builtin.lsp_outgoing_calls, {})
-    vim.keymap.set("n", "<Plug>telescope-lsp_definitions", builtin.lsp_definitions, {})
-    vim.keymap.set("n", "<Plug>telescope-lsp_symbols", builtin.lsp_document_symbols, {})
-    vim.keymap.set("n", "<Plug>telescope-lsp_ws_symbols", builtin.lsp_workspace_symbols, {})
-
-    --{hidden=true, layout_config={prompt_position="top"}}
-    --builtin.man_pages
-  end,
-}
+vim.keymap.set("n", "<Plug>telescope-lsp_definition", builtin.lsp_definitions, {})
+vim.keymap.set("n", "<Plug>telescope-lsp_references", builtin.lsp_references, {})
+vim.keymap.set("n", "<Plug>telescope-lsp_type_def", builtin.lsp_type_definitions, {})
+vim.keymap.set("n", "<Plug>telescope-lsp_implementations", builtin.lsp_implementations, {})
+vim.keymap.set("n", "<Plug>telescope-lsp_incoming", builtin.lsp_incoming_calls, {})
+vim.keymap.set("n", "<Plug>telescope-lsp_outgoing", builtin.lsp_outgoing_calls, {})
+vim.keymap.set("n", "<Plug>telescope-lsp_definitions", builtin.lsp_definitions, {})
+vim.keymap.set("n", "<Plug>telescope-lsp_symbols", builtin.lsp_document_symbols, {})
+vim.keymap.set("n", "<Plug>telescope-lsp_ws_symbols", builtin.lsp_workspace_symbols, {})

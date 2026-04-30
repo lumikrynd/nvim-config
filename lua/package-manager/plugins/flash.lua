@@ -1,35 +1,32 @@
-return {
-  "folke/flash.nvim",
-  event = "VeryLazy",
-  ---@type Flash.Config
-  opts = {
-    highlight = {
-      backdrop = false,
-    },
-    modes = {
-      char = {
-        enabled = true,
-        keys = {
-          "f",
-          "F",
-          "t",
-          "T",
-          [";"] = ",",
-          [","] = ";",
-        },
-        highlight = { backdrop = false },
+vim.pack.add({
+  "https://github.com/folke/flash.nvim",
+})
+
+local opts = {
+  highlight = {
+    backdrop = false,
+  },
+  modes = {
+    char = {
+      enabled = true,
+      keys = {
+        "f",
+        "F",
+        "t",
+        "T",
+        [";"] = ",",
+        [","] = ";",
       },
+      highlight = { backdrop = false },
     },
   },
-  keys = function()
-    local flash = require("flash");
+};
 
-    return {
-      { "<Plug>flash", mode = {""}, flash.jump },
-      { "<Plug>flash-treesitter", mode = {""}, flash.treesitter },
-      { "<Plug>flash-remote", mode = {""}, flash.remote },
-      { "<Plug>flash-treesitter-search", mode = {""}, flash.treesitter_search },
-      { "<Plug>flash-toggle", mode = {""},flash.toggle },
-    }
-  end,
-}
+local flash = require("flash");
+flash.setup(opts)
+
+vim.keymap.set("", "<Plug>flash", flash.jump )
+vim.keymap.set("", "<Plug>flash-treesitter", flash.treesitter )
+vim.keymap.set("", "<Plug>flash-remote", flash.remote )
+vim.keymap.set("", "<Plug>flash-treesitter-search", flash.treesitter_search )
+vim.keymap.set("", "<Plug>flash-toggle", flash.toggle )

@@ -1,40 +1,31 @@
-return {
-  "nvim-treesitter/nvim-treesitter",
-  branch = 'main',
-  build = ':TSUpdate',
-  opts = {
-    -- A list of parser names, or "all" (the five listed parsers should always be installed)
-    ensure_installed = {
-      "lua",
-      "vimdoc",
-      "c_sharp",
-      "sql",
-      "rust",
-    },
+-- hook for updating
+vim.api.nvim_create_autocmd('PackChanged', { callback = function(ev)
+  local name, kind = ev.data.spec.name, ev.data.kind
+  local update = kind == 'install' or kind == 'update'
 
-    -- Install parsers synchronously (only applied to `ensure_installed`)
-    sync_install = false,
+  -- Run build script after plugin's code has changed
+  if name == "nvim-treesitter" and update then
+    vim.cmd("TSUpdate")
+  end
+end})
 
-    -- Automatically install missing parsers when entering buffer
-    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-    auto_install = false,
 
-    highlight = {
-      enable = true,
-
-      -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-      -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-      -- Using this option may slow down your editor, and you may see some duplicate highlights.
-      -- Instead of true it can also be a list of languages
-      additional_vim_regex_highlighting = false,
-    },
+vim.pack.add({
+  {
+    src = "https://github.com/nvim-treesitter/nvim-treesitter",
+    version = "main",
   },
-  init = function()
-    local istatus,install = pcall(require, 'nvim-treesitter.install')
-    if not (istatus) then
-      print("nvim-treesitter configuration skipped")
-      return
-    end
-    install.prefer_git = false
-  end,
+})
+
+require('nvim-treesitter').setup {
+  -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
+  install_dir = vim.fn.stdpath('data') .. '/site'
+}
+
+require('nvim-treesitter').install {
+  "lua",
+  "vimdoc",
+  "c_sharp",
+  "sql",
+  "rust",
 }
