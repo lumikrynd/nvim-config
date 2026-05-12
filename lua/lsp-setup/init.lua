@@ -1,4 +1,4 @@
-require(... .. '.luals')
+-- require(... .. '.luals')
 --require(... .. '.csharp-ls') --done by roslyn plugin
 
 vim.api.nvim_create_autocmd('LspAttach', {

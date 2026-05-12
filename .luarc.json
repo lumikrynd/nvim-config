@@ -1,0 +1,10 @@
+{
+  "workspace": {
+    "library": [
+      "/usr/share/nvim/runtime"
+    ]
+  },
+  "diagnostics": {
+    "globals": ["vim"]
+  }
+}
