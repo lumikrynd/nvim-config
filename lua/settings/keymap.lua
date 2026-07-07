@@ -65,14 +65,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
     local opts = {buffer = event.buf}
-    local diagnostic_opts = {
-      focusable = true,
-      scope = 'cursor',
-      close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter' },
-    }
 
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'L', function() vim.diagnostic.open_float(nil, diagnostic_opts) end, opts)
+    vim.keymap.set('n', 'L', vim.diagnostic.open_float, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', 'gD', '<Plug>telescope-lsp_definition')
     --vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
