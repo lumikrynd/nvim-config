@@ -45,3 +45,9 @@ vim.opt.shada = ""
 vim.opt.writebackup = false
 vim.opt.swapfile = false
 vim.opt.undofile = false
+
+-- dotnet compiler error list
+-- have to set with vimscript https://github.com/neovim/neovim/issues/29061
+vim.cmd([[set errorformat+=%f(%l\\,%c):\ %t%*[a-z]\ %m]])
+vim.cmd([[set errorformat+=%f:\ %t%*[a-z]\ %m]])
+vim.cmd([[set errorformat+=%f\ :\ %t%*[a-z]\ %m]])
